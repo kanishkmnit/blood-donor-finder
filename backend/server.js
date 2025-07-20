@@ -64,13 +64,18 @@ app.get("/find", async (req, res) => {
         .json({ message: "City and Blood Group required." });
     }
 
-    const donors = await Donor.find({ city, bloodGroup });
+    const donors = await Donor.find({
+      city: { $regex: new RegExp(city, "i") },
+      bloodGroup: { $regex: new RegExp(bloodGroup, "i") },
+    });
+
     res.status(200).json(donors);
   } catch (error) {
     console.error("❌ Find Error:", error);
     res.status(500).json({ message: "Failed to fetch donors." });
   }
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
