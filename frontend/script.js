@@ -1,4 +1,5 @@
-// script.js
+// Replace this with your deployed backend URL
+const BASE_URL = "https://blood-donor-finder-49dc.onrender.com";
 
 // REGISTER FORM
 const registerForm = document.getElementById("registerForm");
@@ -20,7 +21,7 @@ if (registerForm) {
       return;
     }
 
-    const response = await fetch("http://localhost:3000/register", {
+    const response = await fetch(`${BASE_URL}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, contact, city, bloodGroup, date }),
@@ -45,7 +46,7 @@ if (findForm) {
     const bloodGroup = document.getElementById("bloodGroup").value;
 
     const response = await fetch(
-      `http://localhost:3000/find?city=${encodeURIComponent(city)}&bloodGroup=${encodeURIComponent(bloodGroup)}`
+      `${BASE_URL}/find?city=${encodeURIComponent(city)}&bloodGroup=${encodeURIComponent(bloodGroup)}`
     );
     const donors = await response.json();
 
