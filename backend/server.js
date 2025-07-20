@@ -7,19 +7,19 @@ const cors = require("cors");
 
 const app = express();
 
-// ✅ Middleware setup
+// Middleware setup
 app.use(cors());
 app.use(express.json());
 
-// ✅ Serve frontend static files from '../frontend'
+// Serve frontend static files from '../frontend'
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-// ✅ Optional default route
+// Optional default route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend", "index.html"));
 });
 
-// ✅ Connect to MongoDB Atlas
+// Connect to MongoDB Atlas
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -28,7 +28,7 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// ✅ Donor Registration Endpoint
+// Donor Registration Endpoint
 app.post("/register", async (req, res) => {
   try {
     const { name, contact, city, bloodGroup, date } = req.body;
@@ -53,7 +53,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// ✅ Find Donors Endpoint
+// Find Donors Endpoint
 app.get("/find", async (req, res) => {
   try {
     const { city, bloodGroup } = req.query;
