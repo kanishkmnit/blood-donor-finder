@@ -1,0 +1,99 @@
+/* 🌐 General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* 🧱 Container Layout */
+.container {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* 🧩 Headings */
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* 🏷️ Labels & Inputs */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 🔘 Button Styles */
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #c0392b, #e74c3c);
+}
+
+/* 🩸 Result Card Styles */
+.result-card {
+  background: #fefefe;
+  border-left: 5px solid #e74c3c;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.result-card p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  input, select, button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .result-card {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
